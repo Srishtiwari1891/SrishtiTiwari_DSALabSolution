@@ -3,7 +3,7 @@ package com.greatlearning.dsa.lab3.driver;
 import java.util.Scanner;
 
 import com.greatlearning.dsa.lab3.balancecheck.BalanceCheckLogic;
-public class DriverClass {
+public class DriverClass extends IllegalArgumentException {
 
 	public static void main(String[] args) {
 		
@@ -20,6 +20,10 @@ public class DriverClass {
 				System.out.println("The entered String has Balanced Brackets");
 			else
 				System.out.println("The entered Strings do not contain Balanced Brackets");
+		}
+		catch (IllegalArgumentException e) {
+			System.out.println("Please input only positive numbers");
+			sc.next();
 		}
 		finally {
 			//Close scanner object
