@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class BinarySearchTree {
 	
-	Node1 root;
+	Node root;
 	
 	//Insert node in the BST
 	public void insertNode(int key) {
@@ -85,18 +85,18 @@ public class BinarySearchTree {
 	}
 }
 
-class Node1 {
+class Node {
 
 	int data;
-	Node1 left, right, root;
+	Node left, right, root;
 
-	Node1() {
+	Node() {
 		this.data=-1;
 		this.left = this.right = null;
 	}
 
 	// Initialize Node1 for BST
-	Node1(int d) {
+	Node(int d) {
 		this.data = d;
 		this.left = this.right = null;
 	}
