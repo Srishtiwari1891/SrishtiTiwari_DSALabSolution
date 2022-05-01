@@ -21,37 +21,37 @@ public class BinarySearchTree {
 		inorderTrav(this.root);
 	}
 	
-	public Node1 insertRec(Node1 root, int key) {
-		// check for empty BST and add new Node1
+	public Node insertRec(Node root, int key) {
+		// check for empty BST and add new Node
 		if (root==null) {
-			root = new Node1(key);
+			root = new Node(key);
 			//root.data = key;
 			return root;
 		}
 
-		// if non-empty BST, add Node1
+		// if non-empty BST, add Node
 		if (key < root.data)
 			root.left = insertRec(root.left, key);
 		else
 			root.right = insertRec(root.right, key);
 
-		// return Node1 in the end
+		// return Node in the end
 		return root;
 	}
 
 	// Inorder traversal of the BST
-	public void inorderTrav(Node1 Node1) {
-		if (Node1 == null)
+	public void inorderTrav(Node Node) {
+		if (Node == null)
 			return;
-		inorderTrav(Node1.left);
-		System.out.println(Node1.data + " ");
-		inorderTrav(Node1.right);
+		inorderTrav(Node.left);
+		System.out.println(Node.data + " ");
+		inorderTrav(Node.right);
 
 	}
 
-	public void checkPairSum(Node1 Node1, int value) {
+	public void checkPairSum(Node Node, int value) {
 		ArrayList<Integer> arr1 = new ArrayList<>();
-		ArrayList<Integer> arr2 = treeToList(Node1, arr1);
+		ArrayList<Integer> arr2 = treeToList(Node, arr1);
 
 		int start = 0;
 		int end = arr2.size() - 1;
@@ -71,15 +71,15 @@ public class BinarySearchTree {
 		return;
 	}
 
-	ArrayList<Integer> treeToList(Node1 Node1, ArrayList<Integer> list) {
+	ArrayList<Integer> treeToList(Node Node, ArrayList<Integer> list) {
 		// Check for empty BST return
-		if (Node1 == null)
+		if (Node == null)
 			return list;
 
-		// Add tree Node1s to list from left Node1 to right Node1
-		treeToList(Node1.left, list);
-		list.add(Node1.data);
-		treeToList(Node1.right, list);
+		// Add tree Nodes to list from left Node to right Node
+		treeToList(Node.left, list);
+		list.add(Node.data);
+		treeToList(Node.right, list);
 
 		return list;
 	}
@@ -95,7 +95,7 @@ class Node {
 		this.left = this.right = null;
 	}
 
-	// Initialize Node1 for BST
+	// Initialize Node for BST
 	Node(int d) {
 		this.data = d;
 		this.left = this.right = null;

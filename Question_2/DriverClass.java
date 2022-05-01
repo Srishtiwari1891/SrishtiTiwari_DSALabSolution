@@ -9,7 +9,7 @@ public class DriverClass {
 	public static void main(String[] args) {
 		// Initialize Scanner object
 		Scanner sc=new Scanner(System.in);
-		int n,sum,key;
+		int n,sum;
 		BinarySearchTree objBst;
 		try {
 			objBst=new BinarySearchTree();			
@@ -21,14 +21,6 @@ public class DriverClass {
 			System.out.println("Enter Tree nodes(by level)");
 			for(int i=1;i<=n;i++)
 				objBst.insertNode(sc.nextInt());
-			
-//			objBst.insertNode(15);
-//			objBst.insertNode(10);
-//			objBst.insertNode(20);
-//			objBst.insertNode(8);
-//			objBst.insertNode(12);
-//			objBst.insertNode(16);
-//			objBst.insertNode(25);
 			
 			//Get sum value to check in BST
 			System.out.println("Enter the sum to check in BST: ");
