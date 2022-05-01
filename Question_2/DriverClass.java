@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.greatlearning.dsa.lab3.bst.binarysearchtree.BinarySearchTree;
 
-public class DriverClass {
+public class DriverClass extends IllegalArgumentException {
 
 	public static void main(String[] args) {
 		// Initialize Scanner object
@@ -28,6 +28,10 @@ public class DriverClass {
 			
 			//Check BST for the presence for the sum value
 			objBst.isPresent(sum);				
+		}
+		catch (IllegalArgumentException e) {
+			System.out.println("Please input only positive numbers");
+			sc.next();
 		}
 		finally {
 			//Release memory allocated to Scanner object
